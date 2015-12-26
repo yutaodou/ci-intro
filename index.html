@@ -65,7 +65,7 @@
                 </section>
                 <section data-markdown data-notes="提交，检查更新，编译，检查，反馈，部署">
                     <script type="text/template">
-                        ### 一个典型的持续集成过程
+                        ###  持续集成示意图
                         ![CI Process](images/ci-workflow.jpg)
                     </script>
                 </section>
@@ -78,19 +78,19 @@
                         - 增强团队信心
                     </script>
                 </section>
+
                 <section data-markdown>
                     <script type="text/template">
-                        ### 真实CI
+                        ### 持续集成流水线 - 示例
 
-                        ![CI 照片](images/myfun-ci-dashboard.png)
+                        ![CI 照片](images/ci-pipeline.png)
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        ### 真实CI构建流程
+                        ### 持续集成仪表盘
 
-                        // ![CI 照片](images/myfun-phases-1.png)
-                        // ![CI 照片](images/myfun-phases-2.png)
+                        ![CI 照片](images/myfun-ci-dashboard.png)
                     </script>
                 </section>
                 <section data-markdown data-notes="版本控制工具举例子；哪些文件需要版本控制？">
@@ -100,12 +100,51 @@
                         ![commit-history](images/commit-history.png)
                     </script>
                 </section>
-                <section data-markdown data-notes="自动化一切重复性的工作,避免手动操作，效率低，而且容易出错；基线：一条命令自动编译，检查，
-                    测试，完成整个反馈过程；举例几种开发语言上实现自动化的工具，如C#,Java,Ruby,C/C++">
+                 <section data-markdown data-notes="基本原则是checkout代码后能一键构建；ignore">
+                    <script type="text/template">
+                        ### 准备工作 - 版本控制
+                        - 代码
+                        - 配置文件
+                        - 测试代码
+                        - 数据脚本
+                        - 安装脚本/启动脚本
+                        - 第三方库依赖
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 准备工作 - 版本控制
+                        ```ruby
+                        .DS_Store
+                        *.pid
+                        *.ipr
+                        *.iml
+                        *.iws
+                        .idea
+                        log/
+                        build/
+                        acceptance-tests/vendor/
+                        ```  
+                    </script>
+                </section>
+                <section data-markdown data-notes="自动化一切重复性的工作,避免手动操作，效率低，而且容易出错；基线：一条命令自动编译，检查，测试，完成整个反馈过程；举例几种开发语言上实现自动化的工具，如C#,Java,Ruby,C/C++">
                     <script type="text/template">
                         ### 准备工作 - 自动化
 
                         ![自动化](images/automation.jpg)
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### 准备工作 - 自动化
+                        - 编译
+                        - 测试
+                            - 单元测试
+                            - 功能测试
+                            - 集成测试
+                        - 打包
+                        - 发布
+                        - 部署
                     </script>
                 </section>
                 <section data-markdown data-notes="持续集成不是一种工具，是一种实践，需要开发团队一定的投入，
@@ -128,33 +167,7 @@
                         1. 提交代码至主干分支
                     </script>
                 </section>
-                <section data-markdown data-notes="基本原则是checkout代码后能一键构建；ignore">
-                    <script type="text/template">
-                        ### 最佳实践 - 版本控制
-                        - 代码
-                        - 配置文件
-                        - 测试代码
-                        - 数据脚本
-                        - 安装脚本/启动脚本
-                        - 第三方库依赖
-                    </script>
-                </section>
-                <section data-markdown data-notes="">
-                    <script type="text/template">
-                        ### 最佳实践 - 版本控制
-                        ```ruby
-                        .DS_Store
-                        *.pid
-                        *.ipr
-                        *.iml
-                        *.iws
-                        .idea
-                        log/
-                        build/
-                        acceptance-tests/vendor/
-                        ```  
-                    </script>
-                </section>
+               
                 <section data-markdown data-notes="">
                     <script type="text/template">
                         ### 最佳实践 - 正确提交
@@ -170,13 +183,19 @@
                         ![commit-message](images/commit-message.png)
                     </script>
                 </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### 最佳实践 - 功能开关
+                        ![feature-toggle](images/feature-toggle.png)
+                    </script>
+                </section>
                 <section data-markdown data-notes="">
                     <script type="text/template">
                         ### 最佳实践 - 构建成功是最高优先级
                         - 提交前本地构建，确保本地通过后再提交
                         - 如果当前构建失败，不要再提交代码
                         - 下班前构建必须处于成功状态
-                        - 在回滚前，规定一个修复时间
+                        - 如果在规定时间内无法修复，则回滚代码
                         - 不要将失败的测试注释掉
                         - 为自己导致的问题负责
                     </script>
@@ -187,6 +206,11 @@
                         - 并行构建
                         - 分级构建
                         - 组件化
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        # Q & A
                     </script>
                 </section>
             </div>

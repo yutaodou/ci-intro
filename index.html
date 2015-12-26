@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>持续集成简介</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css" id="theme">
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <!-- Home Page  -->
+                <section data-markdown>
+                    <script type="text/template">
+                        # 持续集成介绍
+                        By [豆玉涛](http://ddou.github.io) @ [ThoughtWorks](http://www.thoughtworks.com)
+                    </script>
+                </section>
+                <!--Myfun Introuction Page  -->
+                <section data-markdown  data-notes="分而治之；堆积木；">
+                    <script type="text/template">
+                        ### 软件开发方式
+                        ![软件开发方式](images/lego.jpg)
+                    </script>
+                </section>
+                <section data-markdown data-notes="举实例：merge 代码，测试问题反复；低风险，可靠，可重复的过程">
+                    <script type="text/template">
+                        ### 集成是一个痛苦的过程
+
+                        - 代码冲突
+                        - 破坏现有功能
+
+                        ![crazy](images/crazy.jpg)
+                    </script>
+                </section>  
+
+                <section data-markdown  data-notes="提前并重复做让你感到痛苦的事情；kent bent极限编程，马大叔；快速反馈，减少集成中问题，提高构建软件的质量">
+                    <script type="text/template">
+                        ### 持续集成
+                        
+                        - 一项软件开发实践   
+                        - 每个开发人员频繁与他人代码做集成，至少每天一次
+                        - 代码提交自动触发构建
+                        - 构建中通过自动化测试验证代码功能
+                    </script>
+                </section>
+                <section data-markdown data-notes="提交，检查更新，编译，检查，反馈，部署">
+                    <script type="text/template">
+                        ### 一个典型的持续集成过程
+                        ![CI Process](images/ci-workflow.jpg)
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 持续集成收益
+
+                        - 快速反馈，尽早发现解决问题
+                        - 让构建，部署，测试和发布过程可视化，促进合作
+                        - 增强团队信心
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### 真实CI
+
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### 真实CI构建流程
+
+                        // ![CI 照片](images/myfun-phases-1.png)
+                        // ![CI 照片](images/myfun-phases-2.png)
+                    </script>
+                </section>
+                <section data-markdown data-notes="版本控制工具举例子；哪些文件需要版本控制？">
+                    <script type="text/template">
+                        ###  准备工作 - 版本控制
+
+                        ![commit-history](images/commit-history.png)
+                    </script>
+                </section>
+                <section data-markdown data-notes="自动化一切重复性的工作,避免手动操作，效率低，而且容易出错；基线：一条命令自动编译，检查，
+                    测试，完成整个反馈过程；举例几种开发语言上实现自动化的工具，如C#,Java,Ruby,C/C++">
+                    <script type="text/template">
+                        ### 准备工作 - 自动化
+
+                        ![自动化](images/automation.jpg)
+                    </script>
+                </section>
+                <section data-markdown data-notes="持续集成不是一种工具，是一种实践，需要开发团队一定的投入，
+                    并遵守一些准则；反例">
+                    <script type="text/template">
+                        ### 准备工作 - 团队共识
+                        - 频繁提交
+                        - 保证构建成功是最高优先级的任务
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 持续集成环境下典型的工作流程
+                        1. 主干分支签出最新代码
+                        1. 添加功能/修改Bug
+                        1. 本地运行构建
+                        1. 主干分支签出最新代码
+                        1. 解决代码冲突
+                        1. 本地运行构建
+                        1. 提交代码至主干分支
+                    </script>
+                </section>
+                <section data-markdown data-notes="基本原则是checkout代码后能一键构建；ignore">
+                    <script type="text/template">
+                        ### 最佳实践 - 版本控制
+                        - 代码
+                        - 配置文件
+                        - 测试代码
+                        - 数据脚本
+                        - 安装脚本/启动脚本
+                        - 第三方库依赖
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 最佳实践 - 版本控制
+                        ```ruby
+                        .DS_Store
+                        *.pid
+                        *.ipr
+                        *.iml
+                        *.iws
+                        .idea
+                        log/
+                        build/
+                        acceptance-tests/vendor/
+                        ```  
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 最佳实践 - 正确提交
+                        - 原子提交
+                        - 频繁提交
+                        - 避免提交不必要的文件
+                        - 清晰准确的提交注释
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 最佳实践 - 正确提交
+                        
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                    </script>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script type="text/javascript">
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                slideNumber:true,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'slide', 
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: false, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad();} },
+                    { src: 'plugin/zoom-js/zoom.js', async: false },
+                    { src: 'plugin/notes/notes.js', async: false }
+                    ]
+            });
+        </script>
+    </body>
+</html>

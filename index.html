@@ -82,6 +82,7 @@
                     <script type="text/template">
                         ### 真实CI
 
+                        ![CI 照片](images/myfun-ci-dashboard.png)
                     </script>
                 </section>
                 <section data-markdown>
@@ -163,18 +164,29 @@
                         - 清晰准确的提交注释
                     </script>
                 </section>
-                <section data-markdown data-notes="">
+                <section data-markdown data-notes="标题行50字符以内；详细信息与标题行空喊分开；Pair名字">
                     <script type="text/template">
                         ### 最佳实践 - 正确提交
-                        
+                        ![commit-message](images/commit-message.png)
                     </script>
                 </section>
                 <section data-markdown data-notes="">
                     <script type="text/template">
+                        ### 最佳实践 - 构建成功是最高优先级
+                        - 提交前本地构建，确保本地通过后再提交
+                        - 如果当前构建失败，不要再提交代码
+                        - 下班前构建必须处于成功状态
+                        - 在回滚前，规定一个修复时间
+                        - 不要将失败的测试注释掉
+                        - 为自己导致的问题负责
                     </script>
                 </section>
                 <section data-markdown data-notes="">
                     <script type="text/template">
+                        ### 最佳实践 - 保持构建速度
+                        - 并行构建
+                        - 分级构建
+                        - 组件化
                     </script>
                 </section>
             </div>

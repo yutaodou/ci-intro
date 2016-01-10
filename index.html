@@ -52,7 +52,6 @@
                         ![crazy](images/crazy.jpg)
                     </script>
                 </section>  
-
                 <section data-markdown  data-notes="提前并重复做让你感到痛苦的事情；kent bent极限编程，马大叔；快速反馈，减少集成中问题，提高构建软件的质量">
                     <script type="text/template">
                         ### 持续集成
@@ -69,16 +68,6 @@
                         ![CI Process](images/ci-workflow.jpg)
                     </script>
                 </section>
-                <section data-markdown data-notes="">
-                    <script type="text/template">
-                        ### 持续集成收益
-
-                        - 快速反馈，尽早发现解决问题
-                        - 让构建，部署，测试和发布过程可视化，促进合作
-                        - 增强团队信心
-                    </script>
-                </section>
-
                 <section data-markdown>
                     <script type="text/template">
                         ### 持续集成流水线 - 示例
@@ -90,7 +79,16 @@
                     <script type="text/template">
                         ### 持续集成仪表盘
 
-                        ![CI 照片](images/myfun-ci-dashboard.png)
+                        ![CI 照片](images/ci-dashboard.jpeg)
+                    </script>
+                </section>
+                <section data-markdown data-notes="">
+                    <script type="text/template">
+                        ### 持续集成收益
+
+                        - 快速反馈，尽早发现解决问题
+                        - 让构建，部署，测试和发布过程可视化，促进合作
+                        - 增强团队信心
                     </script>
                 </section>
                 <section data-markdown data-notes="版本控制工具举例子；哪些文件需要版本控制？">
@@ -147,6 +145,19 @@
                         - 部署
                     </script>
                 </section>
+                <section data-markdown>
+                    <script type="text/template">
+                    ### 准备工作 - 自动化
+                    - .NET 
+                        - NAnt, MSBuild
+                    - java 
+                        - Ant, Maven, Gradle
+                    - Ruby
+                        - rake
+                    - C/C++ 
+                        - make
+                    </script>
+                </section>
                 <section data-markdown data-notes="持续集成不是一种工具，是一种实践，需要开发团队一定的投入，
                     并遵守一些准则；反例">
                     <script type="text/template">
@@ -155,7 +166,7 @@
                         - 保证构建成功是最高优先级的任务
                     </script>
                 </section>
-                <section data-markdown data-notes="">
+                <section data-markdown>
                     <script type="text/template">
                         ### 持续集成环境下典型的工作流程
                         1. 主干分支签出最新代码
@@ -167,7 +178,16 @@
                         1. 提交代码至主干分支
                     </script>
                 </section>
-               
+                <section data-markdown>
+                    <script type="text/template">
+                    ### 常用持续集成工具
+                    - Jenkins
+                    - Go CD
+                    - Teamcity
+                    - Bamboo
+                    - ...
+                    </script>
+                </section>
                 <section data-markdown data-notes="">
                     <script type="text/template">
                         ### 最佳实践 - 正确提交
